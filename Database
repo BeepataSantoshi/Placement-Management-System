@@ -1,0 +1,21 @@
+	create database students;
+	use students;
+
+	create table login(id bigint primary key auto_increment,username varchar(255),password varchar(255));
+	insert into login values(101,"Santoshi","santoshi@123");
+	insert into login values(102,"Divya","divya123");
+	select *from login;
+
+
+	create table placement(id bigint primary key auto_increment,name varchar(255),date varchar(255),qualification varchar(255),year varchar(255));
+	select * from placement;
+
+
+	create table college(id bigint primary key auto_increment,collegename varchar(255),collegelocation varchar(255),collegeadmin varchar(255), collegeemail varchar(255));
+	select*from college;
+
+
+
+	create table student(id bigint primary key auto_increment,studentname varchar(255),course varchar(255),percentage int,mailid varchar(255), college varchar(255),roll bigint,qualification varchar(255),hallticketno int);
+	select*from student;
+
