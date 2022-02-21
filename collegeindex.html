@@ -1,0 +1,116 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+ 
+<head>
+<style>
+.img{
+width:70px;
+height:70px;
+broder-radius:10px
+}
+            h2.fuzzy{
+        text-shadow: 3px 3px 3px purple;
+        text-align:center;
+         
+         font-size: 50px;
+        
+      }
+      .button {
+   font-size: 16px;
+   font-weight: bold;
+   color: white;
+   padding: 14px 20px;
+   margin: 8px 0;
+   border: 2px solid black;
+   border-radius:20px;
+   cursor: pointer;
+   width: 10%;
+}
+      body{
+
+padding: 150px;
+  background: url("/bg.jpg");
+  background-repeat: no-repeat center fixed;
+  -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+ 	background-size: cover;
+  background-size: 100% 100%;
+
+}
+#img1{
+border: 2px solid grey;
+border-radius:10px;
+padding:5px;
+width:10%;
+}
+</style>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body >
+<div>
+<!--  <img src="C:\Users\santo\Desktop\PlacementManagementApplication\PlacementManagementApplication\src\main\resources\static/logo.png" class="img" alt="img1"></img>-->
+<img src="/logo.png" id="img1" align="left">
+
+<center>
+	<h2 class="fuzzy">Spring Boot Crud College Registation</h2></center>
+	<hr>
+
+		<div align = "left" >	
+	   
+		      <h3><button class="button"><a th:href="@{'/collegenew'}">Add New</a></button>   <button class="button"><a  th:href="@{'/adminindex'}">Home</a></button></h3>
+	   
+	    </div>
+	  
+	
+	<tr>
+	<hr>
+	<center>
+	<div class="col-sm-5" align = "center">
+                 <div class="panel-body" align = "center" >
+                 <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      		<th>CollegeID</th>
+            <th>CollegeName</th>
+            <th>CollegeLocation</th>
+            <th>CollegeAdmin</th>
+            <th>CollegeEmail</th>
+            <th>Edit</th>
+            <th>Delete</th>
+   	</tr>
+   	
+  </thead>
+  <tbody>
+      <tr  th:each="College : ${listcollege }">
+		<td th:text="${College.id}">College ID</td>
+		<td th:text="${College.collegename}">CollegeName</td>
+		<td th:text="${College.collegelocation}">CollegeLocation</td>
+		<td th:text="${College.collegeadmin}">CollegeAdmin</td>
+		<td th:text="${College.collegeemail}">Email</td>				
+		<td>
+			<a th:href="@{'/editcollege/' + ${College.id}}">Edit</a>
+		</td>							    
+		<td>
+			<a th:href="@{'/deletecollege/' + ${College.id}}">Delete</a>
+		</td>		    
+		</tr> 
+   
+  </tbody>
+</table>
+                    
+                 </div>
+ 
+            </div> 
+ 
+	</tr>
+ 
+	</tbody>
+	</table>
+	<div>
+	</center>
+</body>
+</html>

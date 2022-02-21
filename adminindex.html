@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin</title>
+<style>
+.style1 {
+ 
+  padding: 150px;
+  background: url("/bg.jpg");
+  background-repeat: no-repeat center fixed;
+  -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+ 	background-size: cover;
+  background-size: 100% 100%;
+
+}
+h2.fuzzy{
+        text-shadow: 3px 3px 3px purple;
+         
+         font-size: 50px;
+        
+      }
+    	.color{
+    		background:rgb(3, 161, 204);
+    	}
+      
+      b{
+       font-style:italic;
+       padding:10px;
+      }
+      .button {
+   font-size: 15px;
+   font-weight: bold;
+   background-color:purple;
+   color: white;
+   padding: 14px 20px;
+   margin: 8px 0;
+   border: 2px solid black;
+   border-radius:10px;
+   cursor: pointer;
+   width: 7%;
+}
+</style>
+
+</head>
+<body >
+
+<div class=style1>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+
+   <h1><b style="color:Skyblue;">Welcome!!!</b></h1><br>
+   
+   <h2 class="fuzzy"><B style="color:maroon;" > PLACEMENT MANAGEMENT </b></h1><BR>
+   <h3>
+   <b style="color:white">COMPANY DETAILS</b> &nbsp;&nbsp;&nbsp;<a th:href="@{'/companyindex'}"><input type="submit" class="button" value="Open" /></a><br><br><br>
+    <b style="color:white">PLACEMENT DETAILS</b> &nbsp;&nbsp;&nbsp;<a th:href="@{'/placementindex'}"><input type="submit" class="button" value="Open" /></a><br><br><br>
+   <b style="color:white">COLLEGE DETAILS</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a th:href="@{'/collegeindex'}"><input type="submit" class="button" value="Open" /></a><br><br><br>
+   <b style="color:white">STUDENT DETAILS</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a th:href="@{'/studentindex'}"><input type="submit" class="button" value="Open" /></a><br><br><br>
+   </h3>
+   <form th:action="@{/logout}" method="post">
+        <input type="submit" class="button" value="Logout" />
+    </form>
+    </div>
+   
+</body>
+</html>
